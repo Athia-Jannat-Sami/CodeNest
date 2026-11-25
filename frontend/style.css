@@ -1,0 +1,164 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background: #F4F7FB;
+    color: #333333;
+}
+
+/* Navbar */
+.navbar {
+    background: #001F3F;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #87CEEB;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #001F3F, #123E66);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Start Coding Button */
+.start-btn {
+    display: inline-block;
+    background: white;
+    color: #001F3F;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background: #87CEEB;
+    color: #001F3F;
+}
+
+/* Programming Languages Section */
+.languages {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.languages h2,
+.compiler-section h2,
+.about h2 {
+    margin-bottom: 30px;
+    color: #001F3F;
+}
+
+/* Language Cards */
+.language-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.language-card {
+    background: white;
+    padding: 35px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 31, 63, 0.12);
+    transition: 0.3s;
+}
+
+.language-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 31, 63, 0.2);
+}
+
+.language-card h3 {
+    color: #123E66;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+/* Compiler Section */
+.compiler-section {
+    background: #E6EEF7;
+    text-align: center;
+    padding: 60px 8%;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 60px 8%;
+    line-height: 1.7;
+}
+
+/* Footer */
+footer {
+    background: #001F3F;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .language-card {
+        width: 100%;
+    }
+}
+
