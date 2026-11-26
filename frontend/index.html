@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeNest - Online Compiler</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
 </head>
 <body>
 
@@ -51,10 +53,69 @@
         </div>
     </section>
 
-    <section class="compiler-section" id="compiler">
-        <h2>Online Compiler</h2>
-        <p>Your coding workspace will appear here.</p>
-    </section>
+    
+<section class="compiler-section" id="compiler">
+
+    <h2>CodeNest Online Compiler</h2>
+
+    <p>Write, compile and run your programs online.</p>
+
+    <div class="compiler-box">
+
+        <div class="compiler-toolbar">
+
+            <label for="language">Select Language:</label>
+
+            <select id="language">
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="java">Java</option>
+            </select>
+
+        </div>
+
+        <div class="editor-container">
+
+            <label for="code">Write Your Code:</label>
+
+            <textarea id="code" placeholder="Write your code here..."></textarea>
+
+        </div>
+
+        <div class="input-container">
+
+            <label for="input">Custom Input (Optional):</label>
+
+            <textarea id="input" placeholder="Enter your input here..."></textarea>
+
+        </div>
+
+        <div class="compiler-buttons">
+
+            <button id="runBtn">Run Code</button>
+
+            <button id="clearBtn">Clear Code</button>
+
+            <button id="resetBtn">Reset</button>
+
+            <button id="copyBtn">Copy Code</button>
+
+            <button id="downloadBtn">Download Code</button>
+
+        </div>
+
+        <div class="output-container">
+
+            <h3>Output</h3>
+
+            <pre id="output">Your output will appear here...</pre>
+
+        </div>
+
+    </div>
+
+</section>
+
 
     <section class="about" id="about">
         <h2>About CodeNest</h2>
@@ -68,7 +129,9 @@
     <footer>
         <p>© 2026 CodeNest - Online Compiler</p>
     </footer>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
