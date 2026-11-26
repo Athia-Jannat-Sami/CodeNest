@@ -72,13 +72,31 @@ document.addEventListener("DOMContentLoaded", function () {
         const sourceCode = editor.getValue();
         const customInput = input.value;
 
+        // Validate source code
         if (!sourceCode.trim()) {
-            output.textContent = "Please write some code first!";
+           output.textContent = "⚠️ Please write some code first!";
+           return;
+        }
+
+        // Validate language
+        if (!["c", "cpp", "java"].includes(selectedLanguage)) {
+           output.textContent = "⚠️ Please select a valid programming language!";
+           return;
+        }
+
+        // Validate code length
+        if (sourceCode.length > 20000) {
+            output.textContent = "⚠️ Code is too long! Maximum 20,000 characters allowed.";
             return;
         }
 
         runBtn.disabled = true;
-        runBtn.textContent = "Compiling...";
+
+        runBtn.innerHTML = `
+            <span class="loading-spinner"></span>
+            Compiling...
+        `;
+
         output.textContent = "Please wait. Your code is compiling...";
 
         try {
@@ -101,6 +119,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!response.ok) {
                 throw new Error(result.error || "Compilation failed!");
+            }
+            // Remove previous output styles
+            output.classList.remove(
+               "output-success",
+               "output-compilation-error",
+               "output-runtime-error"
+            );
+
+            // Apply output style based on compilation status
+            if (result.status === "Accepted") {
+               output.classList.add("output-success");
+            }
+            else if (result.status.includes("Compilation Error")) {
+               output.classList.add("output-compilation-error");
+            }
+            else if (result.status.includes("Runtime Error")) {
+               output.classList.add("output-runtime-error");
             }
 
             
